@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -15,7 +15,7 @@ mongoose.connect(
     )
     .then(() => console.log("Connected To Database"))
         .then(() => {
-            app.listen(5000)
+            app.listen(3003)
         })
         .catch((err) => console.log(err));
 

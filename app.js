@@ -4,7 +4,21 @@ const mongoose = require('mongoose')
 const app = express();
 
 
-mongoose.connect("mongodb+srv://admin:TKgaGpoQacWrkWhy@cluster0.kms04hf.mongodb.net/?retryWrites=true&w=majority ")
+//Middlewares
+
+app.use('/',(req,res,next) => {
+    res.send("This is our starting app")
+})
+
+mongoose.connect(
+    "mongodb+srv://admin:TKgaGpoQacWrkWhy@cluster0.kms04hf.mongodb.net/?retryWrites=true&w=majority "
+    )
+    .then(() => console.log("Connected To Database"))
+        .then(() => {
+            app.listen(5000)
+        })
+        .catch((err) => console.log(err));
+
 
 
 
